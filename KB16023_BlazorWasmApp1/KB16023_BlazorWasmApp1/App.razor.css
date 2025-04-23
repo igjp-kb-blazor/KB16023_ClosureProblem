@@ -1,0 +1,33 @@
+﻿.todo_root {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+}
+
+.todo_list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border: gray solid 0.5px;
+    border-radius: 5px;
+    padding: 1em;
+    background: aliceblue;
+    gap: 5px;
+}
+
+.new_item {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    gap: 5px;
+}
+
+::deep igc-checkbox[checked] {
+    text-decoration: line-through;
+    text-decoration-color: #808080;
+}
+
+::deep igc-checkbox[checked]::part(label) {
+    color: #d3d3d3;
+}
