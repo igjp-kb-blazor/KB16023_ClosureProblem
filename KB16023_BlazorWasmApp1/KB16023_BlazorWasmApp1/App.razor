@@ -1,18 +1,18 @@
-﻿@* ArgumentOutOfRangeException が発生するコード例 *@
+﻿@* ArgumentOutOfRangeException が発生するコード例 (ここから) *@
 @* <div class="question_root_div">
     @for (int i = 0; i < _simpleDodoItems.Count; i++)
     {
-        <IgbCheckbox @key="_simpleDodoItems[i].UniqueKey" @bind-Checked="_simpleDodoItems[i].Answer">@_simpleDodoItems[i].Text</IgbCheckbox>
+        <IgbCheckbox @key="_simpleDodoItems[i].UniqueKey" @bind-Checked="_simpleDodoItems[i].Done">@_simpleDodoItems[i].Text</IgbCheckbox>
     }
 </div> *@
-
+@* ArgumentOutOfRangeException が発生するコード例 (ここまで) *@
 
 <div class="todo_root">
     <div class="todo_list">
         TODO リスト
         @foreach (var todoItem in _simpleDodoItems)
         {
-            <IgbCheckbox @key="todoItem.UniqueKey" @bind-Checked="todoItem.Answer">@todoItem.Text</IgbCheckbox>
+            <IgbCheckbox @key="todoItem.UniqueKey" @bind-Checked="todoItem.Done">@todoItem.Text</IgbCheckbox>
         }
     </div>
     <div class="new_item">
