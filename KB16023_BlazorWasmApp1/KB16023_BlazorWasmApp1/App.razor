@@ -1,8 +1,8 @@
 ﻿@* ArgumentOutOfRangeException が発生するコード例 (ここから) *@
 @* <div class="question_root_div">
-    @for (int i = 0; i < _simpleDodoItems.Count; i++)
+    @for (int i = 0; i < _simpleTodoItems.Count; i++)
     {
-        <IgbCheckbox @key="_simpleDodoItems[i].UniqueKey" @bind-Checked="_simpleDodoItems[i].Done">@_simpleDodoItems[i].Text</IgbCheckbox>
+        <IgbCheckbox @key="_simpleTodoItems[i].UniqueKey" @bind-Checked="_simpleTodoItems[i].Done">@_simpleTodoItems[i].Text</IgbCheckbox>
     }
 </div> *@
 @* ArgumentOutOfRangeException が発生するコード例 (ここまで) *@
@@ -10,7 +10,7 @@
 <div class="todo_root">
     <div class="todo_list">
         TODO リスト
-        @foreach (var todoItem in _simpleDodoItems)
+        @foreach (var todoItem in _simpleTodoItems)
         {
             <IgbCheckbox @key="todoItem.UniqueKey" @bind-Checked="todoItem.Done">@todoItem.Text</IgbCheckbox>
         }
@@ -23,7 +23,7 @@
 </div>
 
 @code {
-    private List<SimpleTodoItem> _simpleDodoItems = new()
+    private List<SimpleTodoItem> _simpleTodoItems = new()
     {
         new() { Text = "歯医者を予約する" },
         new() { Text = "ごみ捨て袋を買う" },
@@ -37,7 +37,7 @@
     private void OnAddClick(EventArgs args)
     {
         if (String.IsNullOrEmpty(this._newTodoItem.Trim())) return;
-        this._simpleDodoItems.Add(new() { Text = this._newTodoItem });
+        this._simpleTodoItems.Add(new() { Text = this._newTodoItem });
         _newTodoItem = "";
     }
 }
